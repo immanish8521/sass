@@ -1,0 +1,67 @@
+//1:: operators
+//2:: variables
+//3:: nesting
+//4:: Mixin
+
+@import 'Mixin';
+@import 'variables';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.main_part{
+    width: 100vw;
+    height: 100vh;
+    background: $bg-color;
+    color: $color;
+}
+.main_part-2{
+    width: 80vw;
+    height: 80vh;
+    background: $bg-color-1;
+    @include contentCenter;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main_part-3{
+    padding-right: 3rem;
+    background: transparent;
+    margin: 5rem 0 5rem 2rem;
+    h1{
+        @include commonCode;
+        text-align: center;
+        margin-bottom: 2rem;
+        &:hover{
+            color: violet;
+        }
+    }
+    p{
+        font-size: 1rem;
+        text-align: justify;
+        text-justify: inter-cluster;
+        font-weight: bolder;
+        &:hover{
+            color: yellow;
+        }
+    }
+    button{
+        @include Button;
+    }
+}
+
+.image-1{
+    // padding-right: 2rem;
+    img{
+        width: 30vw;
+        height: 80vh;
+        object-fit: cover;
+    }
+}
